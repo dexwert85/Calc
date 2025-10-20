@@ -5,15 +5,16 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:orientation="vertical">
+    android:background="#FFF0DC"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:text="Math Ex"
-        android:textSize="20sp"
-        android:layout_gravity="center"/>
+        android:textSize="20sp" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -48,21 +49,21 @@
             android:layout_width="0dp"
             android:layout_height="80dp"
             android:layout_weight="1"
-            android:text="multiply"/>
+            android:text="multiply" />
 
         <Button
             android:id="@+id/t20"
             android:layout_width="0dp"
             android:layout_height="80dp"
             android:layout_weight="1"
-            android:text="to 20"/>
+            android:text="to 20" />
 
         <Button
             android:id="@+id/test"
             android:layout_width="0dp"
             android:layout_height="80dp"
             android:layout_weight="1"
-            android:text="test"/>
+            android:text="test" />
 
     </LinearLayout>
 
@@ -76,14 +77,18 @@
             android:layout_width="120dp"
             android:layout_height="0dp"
             android:layout_gravity="center"
+            android:gravity="center"
             android:layout_weight="1"
+            android:background="#FF9800"
             android:text="number1" />
 
         <TextView
             android:layout_width="120dp"
             android:layout_height="0dp"
             android:layout_gravity="center"
+            android:gravity="center"
             android:layout_weight="1"
+            android:background="#FFD6A2"
             android:text="x" />
 
         <TextView
@@ -91,16 +96,28 @@
             android:layout_width="120dp"
             android:layout_height="0dp"
             android:layout_gravity="center"
+            android:gravity="center"
             android:layout_weight="1"
+            android:background="#FF9800"
             android:text="number2" />
 
         <EditText
             android:id="@+id/answer"
             android:layout_width="120dp"
             android:layout_height="0dp"
-            android:layout_weight="1"
             android:layout_gravity="center"
-            android:hint="Answer"/>
+            android:layout_weight="1"
+            android:background="#FDD4A1"
+            android:gravity="center"
+            android:hint="Answer" />
+
+        <Button
+            android:id="@+id/check"
+            android:layout_width="120dp"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:text="check" />
 
     </LinearLayout>
 
