@@ -30,6 +30,14 @@
             android:text="0" />
 
         <TextView
+            android:id="@+id/grade"
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="0" />
+
+        <TextView
             android:id="@+id/ncor"
             android:layout_width="0dp"
             android:layout_height="80dp"
