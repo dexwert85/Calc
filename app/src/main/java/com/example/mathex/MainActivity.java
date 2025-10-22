@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
     private int x, y;
     private int cor, ncor, grade;
     private boolean[] b;
+    private int streak1, streak2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +38,8 @@ public class MainActivity extends AppCompatActivity {
         tvN2 = findViewById(R.id.num2);
         etAnswer = findViewById(R.id.answer);
         b = new boolean[3];
+        streak1 = 0;
+        streak2 = 0;
 
         mulBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -56,30 +59,34 @@ public class MainActivity extends AppCompatActivity {
         t20Btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                x = (int)(Math.random() * 19) + 1;
-                y = (int)(Math.random() * 19) + 1;
+                if (streak1 >= 10) {
+                    x = (int) (Math.random() * 19) + 1;
+                    y = (int) (Math.random() * 19) + 1;
 
-                b[0] = false;
-                b[1] = true;
-                b[2] = false;
+                    b[0] = false;
+                    b[1] = true;
+                    b[2] = false;
 
-                tvN1.setText(x + "");
-                tvN2.setText(y + "");
+                    tvN1.setText(x + "");
+                    tvN2.setText(y + "");
+                }
             }
         });
 
         testBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                x = (int)(Math.random() * 99) + 1;
-                y = (int)(Math.random() * 99) + 1;
+                if (streak2 >= 10) {
+                    x = (int) (Math.random() * 99) + 1;
+                    y = (int) (Math.random() * 99) + 1;
 
-                b[0] = false;
-                b[1] = false;
-                b[2] = true;
+                    b[0] = false;
+                    b[1] = false;
+                    b[2] = true;
 
-                tvN1.setText(x + "");
-                tvN2.setText(y + "");
+                    tvN1.setText(x + "");
+                    tvN2.setText(y + "");
+                }
             }
         });
 
@@ -94,9 +101,11 @@ public class MainActivity extends AppCompatActivity {
                     cor++;
                     tvCor.setText(cor + "");
                     if (b[0]) {
-                        grade += 1;
+                        grade += 2;
+                        streak1++;
                     } else if (b[1]) {
                         grade += 5;
+                        streak2++;
                     } else {
                         grade += 10;
                     }
@@ -105,9 +114,16 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 if (rightAnswer != answer) {
+                    cor = 0;
+                    tvCor.setText(cor + "");
                     Toast.makeText(MainActivity.this, "Wrong", Toast.LENGTH_SHORT).show();
                     ncor++;
                     tvNCor.setText(ncor + "");
+                    if (b[0]) {
+                        streak1 = 0;
+                    } else if (b[1]) {
+                        streak2 = 0;
+                    }
                 }
 
                 if (grade >= 100) {
