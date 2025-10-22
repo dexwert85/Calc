@@ -119,11 +119,8 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(MainActivity.this, "Wrong", Toast.LENGTH_SHORT).show();
                     ncor++;
                     tvNCor.setText(ncor + "");
-                    if (b[0]) {
-                        streak1 = 0;
-                    } else if (b[1]) {
-                        streak2 = 0;
-                    }
+                    streak1 = 0;
+                    streak2 = 0;
                 }
 
                 if (grade >= 100) {
